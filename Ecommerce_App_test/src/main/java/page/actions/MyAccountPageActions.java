@@ -63,12 +63,30 @@ public class MyAccountPageActions {
 	public void clickButtonContinueShopping() {
 		myaccountPagelocators.btnContinueShopping.click();
 	}
-	
+
 	public void verifyUserHasLoggedInToAccount() {
-		Assert.assertTrue(myaccountPagelocators.iconMyAccount.isDisplayed(),"User Has been logged into account successfully .");
+		Assert.assertTrue(myaccountPagelocators.txtUserName.isDisplayed(),
+				"User Has been logged into account successfully .");
 	}
-	
-	public void clickLogoutButton(){
+
+	public void clickLogoutButton() {
 		myaccountPagelocators.btnLogOut.click();
 	}
+
+	public boolean isTxtUserNameDisplayed() {
+		boolean bStatus = false;
+		try {
+			if (myaccountPagelocators.txtUserName.isDisplayed()) {
+				bStatus = true;
+			}
+		} catch (Exception e) {
+
+		}
+		return bStatus;
+	}
+
+	public void verifyUserHasLoggedOutOfAccount() {
+		Assert.assertFalse(isTxtUserNameDisplayed(), "User Has been logged Out of account successfully .");
+	}
+
 }

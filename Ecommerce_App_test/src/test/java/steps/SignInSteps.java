@@ -85,5 +85,15 @@ public class SignInSteps {
 	public void i_decrease_quantity_of_item(String itemName) throws Throwable {
 		shoppingCartPage.decreaseItemQuantity(itemName);
 	}
+	
+	@Then("^I logOut of MyAccount$")
+	public void i_logOut_of_MyAccount() throws Throwable {
+		myaccPageActions.clickLogoutButton();
+	}
+
+	@Then("^I am Logged Out Successfully$")
+	public void i_am_Logged_Out_Successfully() throws Throwable {
+		myaccPageActions.verifyUserHasLoggedOutOfAccount();
+	}
 
 }

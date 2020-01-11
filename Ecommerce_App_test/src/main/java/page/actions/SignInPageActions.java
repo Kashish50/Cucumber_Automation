@@ -20,21 +20,21 @@ public class SignInPageActions {
 		this.signInPageLocators = new SignInPageLocators();
 		PageFactory.initElements(SeleniumDriver.getDriver(), signInPageLocators);
 	}
-	
-	public void verifySignInPage(){
-		Assert.assertTrue(signInPageLocators.btnSignInNewuser.isDisplayed(),"Verified Successfully that user has navigated to SignIn Page !!!!");
+
+	public void verifySignInPage() {
+		Assert.assertTrue(signInPageLocators.btnSignInNewuser.isDisplayed(),
+				"Verified Successfully that user has navigated to SignIn Page !!!!");
 	}
-	
-	public void inputUserName(String username){
+
+	public void inputUserName(String username) {
 		signInPageLocators.inputEmailAlreadyRegistered.sendKeys(username);
 	}
-	
-	public void inputPasword(String password){
+
+	public void inputPasword(String password) {
 		signInPageLocators.inputPassword.sendKeys(password);
 	}
-	
+
 	public void clickButtonSignIn(){
 		signInPageLocators.btnSignInNewuser.click();
 	}
-
 }
